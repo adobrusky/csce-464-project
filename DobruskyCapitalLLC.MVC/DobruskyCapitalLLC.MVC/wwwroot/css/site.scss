@@ -1,0 +1,397 @@
+$translucent-black: rgba(0, 0, 0, 0.4);
+$orange: rgba(246, 134, 51, 1);
+$dark-gray: rgba(33, 37, 41, 1);
+$section-overlay-background: rgba(0, 0, 0, 0.8);
+
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Calibri', Arial, Helvetica, sans-serif;
+    opacity: 0;
+    transition: opacity ease .5s;
+}
+
+.indicator-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    flex-direction: column-reverse;
+    text-align: center;
+
+    .indicator-image {
+        box-shadow: 2px 2px 10px $dark-gray;
+        max-width: 425px;
+    }
+
+    @media (min-width: 768px) {
+        flex-direction: row-reverse;
+        text-align: left;
+
+        .indicator-description {
+            margin-right: 5% !important;
+        }
+    }
+
+    @media (min-width: 425px) {
+        &.indicator-image, &.indicator-description {
+            width: 75%;
+        }
+    }
+}
+
+.indicator-image, .indicator-description {
+    width: 100%;
+    margin-top: 10px;
+    text-align: justify;
+
+    h3 {
+        text-decoration: underline;
+    }
+
+    @media (min-width: 768px) {
+        width: 50%;
+    }
+}
+
+#navbar {
+    margin-bottom: 0 !important;
+    padding: 0px 15px 0px 15px !important;
+    background-color: $translucent-black !important;
+    border-bottom: 1px solid $translucent-black !important;
+    box-shadow: 0 0px 0 0 white !important;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+
+    &.scrolled-navbar {
+        background-color: $dark-gray !important;
+        box-shadow: 0 1px 0 0 white !important;
+    }
+
+    .navbar-collapse, .navbar-brand {
+        font-size: 16px;
+
+        @media (min-width: 768px) {
+            font-size: 17px;
+        }
+    }
+
+    .navbar-brand {
+        font-weight: 600;
+    }
+
+    @media (min-width: 768px) {
+        padding: 0% 10% 0% 10% !important;
+    }
+
+    .navbar-nav .nav-item .nav-link.active {
+        color: $orange !important;
+        font-weight: 600;
+    }
+
+    @media (min-width: 575px) {
+        .navbar-nav .nav-item .nav-link {
+            position: relative;
+
+            &.active {
+                color: white !important;
+                font-weight: 400;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 0%;
+                height: 2px;
+                background-color: #fff;
+                transition: width 0.5s ease;
+            }
+
+            &:hover:after, &:focus:after, &.active:after {
+                width: 100%;
+            }
+
+            &.active:after {
+                background-color: $orange;
+            }
+        }
+    }
+}
+
+.landing-section {
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    background-image: url('../images/tradingsetup.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $section-overlay-background;
+    }
+
+    a {
+        margin-top: 5vh;
+        background-color: transparent;
+        border: 1px solid white;
+        border-radius: 100px 100px;
+        width: 50px;
+        height: 50px;
+        line-height: 40px;
+        font-size: 20px;
+        transition: color ease .5s, background-color ease .5s;
+
+        &:hover, &:focus {
+            background-color: white;
+            color: $orange;
+            border: 1px solid white;
+        }
+
+        &:focus {
+            outline: none !important;
+        }
+    }
+
+    .container {
+        z-index: 1;
+    }
+}
+
+.p-5 > .container {
+    position: relative;
+    z-index: 1;
+
+    @media (min-width: 1068px) {
+        padding: 0px 10% 0px 10%;
+    }
+}
+
+.navbar-toggler {
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+}
+
+section {
+    h2 {
+        font-weight: 600;
+    }
+
+    .container p {
+        font-size: 16px;
+    }
+
+    a, a:visited {
+        color: $dark-gray;
+        transition: color 0.3s ease;
+
+        &:hover, &:focus {
+            color: $orange;
+        }
+    }
+}
+
+.journal-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+        max-width: 350px;
+        width: 100%;
+        height: auto;
+        box-shadow: 2px 2px 10px $dark-gray;
+    }
+
+    @media (min-width: 768px) {
+        justify-content: space-around;
+        flex-direction: row;
+        align-items: flex-start;
+
+        img {
+            margin-left: 30px;
+        }
+    }
+}
+
+.email-signup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .form-label {
+        font-weight: 600;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        input, .btn {
+            border-radius: 999px 999px;
+            width: 300px;
+            font-size: 15px;
+            height: 40px;
+        }
+
+        .btn.btn-primary {
+            width: 150px;
+            margin-top: 10px;
+            font-weight: 600;
+            background-color: $orange;
+            color: white;
+            border: 1px solid $orange;
+            transition: color ease .5s, background-color ease .5s;
+
+            &:hover, &:focus {
+                background-color: white;
+                color: $orange;
+            }
+
+            &:focus {
+                outline: none !important;
+            }
+        }
+
+        @media (min-width: 768px) {
+            justify-content: space-around;
+            flex-direction: row;
+
+            .btn.btn-primary {
+                margin-top: 0px;
+            }
+
+            input {
+                margin-right: 20px;
+                width: 350px;
+            }
+        }
+    }
+}
+
+.footer {
+    background-color: $dark-gray;
+    color: white;
+    line-height: initial !important;
+    justify-content: space-around !important;
+    position: relative !important;
+    padding-top: 20px !important;
+
+    hr {
+        color: white;
+        height: 2px;
+        border-radius: 10px 10px;
+        margin: 25px 0px 25px 0px;
+    }
+
+    a.footer-link {
+        color: white !important;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: $orange !important;
+        }
+    }
+
+    .footer-logo {
+        max-height: 50px;
+        margin-bottom: 0.5rem;
+    }
+
+    .col-md-4 {
+        text-align: center;
+    }
+
+    .text-light i {
+        font-size: 16px;
+    }
+}
+
+.indicator-page-section > .container > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .indicator-image {
+        margin-top: 0px;
+        max-width: 425px;
+        box-shadow: 2px 2px 10px $dark-gray;
+    }
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .indicator-full-description {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 15px;
+        font-size: 14px;
+
+        & > p {
+            font-size: 14px;
+        }
+
+        span {
+            cursor: not-allowed;
+            margin-top: 10px;
+        }
+
+        .indicator-purchase-btn {
+            width: 150px;
+            font-weight: 600;
+            background-color: $orange;
+            color: white;
+            border: 1px solid $orange;
+            transition: color ease .5s, background-color ease .5s;
+
+            &:hover, &:focus {
+                background-color: white;
+                color: $orange;
+            }
+
+            &:focus {
+                outline: none !important;
+            }
+        }
+
+        @media (min-width: 768px) {
+            margin-left: 15px;
+            margin-top: 0px;
+        }
+    }
+}
+
+.privacy {
+    a {
+        color: $dark-gray !important;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: $orange !important;
+        }
+    }
+}

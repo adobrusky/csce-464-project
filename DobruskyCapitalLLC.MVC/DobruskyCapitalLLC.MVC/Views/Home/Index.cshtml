@@ -1,0 +1,121 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<!-- Landing Page Section -->
+<section id="landing-page" class="landing-section">
+    <div class="container text-center text-white">
+        <h1 class="display-4">Are you ready to level up your trading?</h1>
+        <a class="btn btn-primary"><i class="fa-solid fa-angles-down"></i></a>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="p-5">
+    <div class="container">
+        <h2>About Us</h2>
+        <p>
+            Dobrusky Capital LLC, headquartered in Lincoln, Nebraska, is a trading company founded in 2023 by Austin Dobrusky.
+            Our primary focus is on trading derivative securities of the S&P 500, specifically options and futures contracts.
+            Our approach is data-driven and grounded in understanding the fundamental market mechanics to make informed trading decisions. We rely on our strengths in analyzing volume and price action data, along with market sentiment, to take calculated risks when trading opportunities present themselves.
+            In addition to trading, Austin brings over 8 years of experience in software/web development. 
+            We have applied this expertise to our trading strategies, developing three proprietary trading indicators that have become a cornerstone of our daily operations at Dobrusky Capital LLC.
+        </p>
+        <p>
+            Beyond our trading activities, our mission is to provide as much value as possible to growing traders. 
+            We are committed to sharing knowledge and resources to help others succeed in their trading journey. 
+            This commitment is demonstrated through the free education we offer and the release of the "Dobrusky Capital LLC 90-Day Trading Journal," a tool designed to help traders improve their trading skills and mindset.
+            This meticulously structured trading journal, used daily at Dobrusky Capital LLC, has been instrumental in improving the company's consistency and performance.
+        </p>
+    </div>
+</section>
+
+
+<!-- Indicators Section -->
+<section id="indicators" class="bg-light p-5">
+    <div class="container">
+        <h2>Trading Indicators</h2>
+        <p>
+            We have developed three proprietary trading indicators for the TradingView platform. These indicators are not designed to tell you when to enter or exit trades, but they highlight important information that you could miss otherwise. 
+            You still need to know how to read the market; the purpose of the indicators is to increase the speed at which you can read it and prevent you from missing key details about the market auction.
+        </p>
+        <p>
+            These indicators are stable and are currently undergoing testing in our daily trade operations at Dobrusky Capital LLC.
+            They are not yet available for purchase but will be released as soon as they are ready.
+        </p>
+
+        <div class="indicator-row">
+            <img src="@Url.Content("~/images/volumeprofile.png")" alt="Volume Profile Indicator" class="indicator-image">
+            <div class="indicator-description">
+                <h3>Volume Profile</h3>
+                <p>This indicator displays a volume profile that shows both cumulative volume and buy/sell pressure.</p>
+            </div>
+        </div>
+
+        <div class="indicator-row">
+            <img src="@Url.Content("~/images/volumebars.png")" alt="Buy/Sell Volume Bars Indicator" class="indicator-image">
+            <div class="indicator-description">
+                <h3>Volume Bars</h3>
+                <p>This indicator displays volume by time with buy/sell pressure. 
+                    It features two customizable metrics to gauge a baseline volume: a simple moving average and a proprietary "baseline" metric.
+                    This proprietary metric provides a more accurate baseline volume (in our opinion) than the simple moving average.
+                </p>
+            </div>
+        </div>
+
+        <div class="indicator-row">
+            <img src="@Url.Content("~/images/vpaindicator.png")" alt="Volume Price Analysis Indicator" class="indicator-image">
+            <div class="indicator-description">
+                <h3>VPA Indicator</h3>
+                <p>This indicator was built around the concept of <a href="https://www.amazon.com/Complete-Guide-Price-Analysis/dp/1491249390" target="_blank">volume price analysis</a> (VPA). It highlights important price action conditions, volume conditions, and price levels that can provide insights into potential market structure and direction. It is tailored specifically for intraday trading, but can be used on all timeframes.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Trading Journal Section -->
+<section id="journal" class="p-5">
+    <div class="container">
+        <h2>Trading Journal</h2>
+        <div class="journal-content-wrapper">
+            <div>
+                <p>
+                    We believe journaling is paramount when striving to become a successful trader.
+                    Without keeping track of each of your trades, it will be significantly more difficult to learn from your technical and psychological mistakes.
+                    We created this tool because we saw a need within the retail trading industry for a carefully structured handwritten journal
+                    that enables traders to collect as much data about themselves and their trading strategy as possible. Through this process, traders can accelerate their learning by quickly and more efficiently identifying areas for improvement.
+                </p>
+                <p>
+                    We believe in the power of our journal, we use it everyday, and we would like to share a <strong>free</strong> sneak peak of it with you.
+                    We understand that a structured handwritten journal might not be for everyone, and we don't want to waste your time and money. We are offering a free sample so that you can decide <em>risk free</em> if you want to make it part of your daily trading routine.
+                </p>
+                <p>
+                    The journal features detailed trade metrics, emotion tracking, and much more to
+                    support a comprehensive trading strategy and psychological framework. A full description of the journal and its features can be found <a target="_blank" href="https://www.amazon.com/Dobrusky-Capital-90-Day-Trading-Journal/dp/B0CPY3FJ39">here</a>.
+                </p>
+                <p>
+                    The reason most traders fail early on is because they have no risk management rules.
+                    They quickly lose all of their money, preventing them from taking the time to learn and grow their skills enough to be consistent. In other words, <em>they don't live to trade another day</em>.
+                    To honor our mission of providing significant value, not only will you receive a free peek at our journal, but also access to our simple risk management formula that, when executed with discipline, will ensure that you <em>always live to trade another day</em>.
+                </p>
+            </div>
+            <img src="@Url.Content("~/images/journal.jpg")" alt="Dobrusky Capital LLC 90-Day Trading Journal">
+        </div>
+    </div>
+</section>
+
+<!-- Email Sign-Up Form -->
+<section class="bg-light p-5">
+    <form class="email-signup">
+        <label for="emailInput" class="form-label">Receive your free risk management education and sample of the journal now!</label>
+        <div>
+            <input type="email" class="form-control" id="emailInput" placeholder="name@example.com">
+            <button type="submit" class="btn btn-primary">Let's go</button>
+        </div>
+    </form>
+</section>
+
+<script>
+    // Navbar needs to start off transculent on the home page until scroll
+    let isHome = true;
+</script>
