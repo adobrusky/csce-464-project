@@ -1,7 +1,12 @@
+using DobruskyCapitalLLC.MVC.Managers.MailingListManager;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.Configure<SMTPSettings>(builder.Configuration.GetSection("SMTPSettings"));
+builder.Services.AddSingleton<EmailHelper>();
+builder.Services.AddScoped<MailingListManager>();
 
 var app = builder.Build();
 

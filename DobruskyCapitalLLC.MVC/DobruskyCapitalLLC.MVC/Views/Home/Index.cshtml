@@ -11,7 +11,7 @@
 </section>
 
 <!-- About Section -->
-<section id="about" class="p-5">
+<section id="about" class="p-5 fade-in bg-white" style="margin-top:5px;">
     <div class="container">
         <h2>About Us</h2>
         <p>
@@ -29,7 +29,6 @@
         </p>
     </div>
 </section>
-
 
 <!-- Indicators Section -->
 <section id="indicators" class="bg-light p-5">
@@ -74,16 +73,16 @@
 </section>
 
 <!-- Trading Journal Section -->
-<section id="journal" class="p-5">
+<section id="journal" class="p-5 fade-in bg-white">
     <div class="container">
         <h2>Trading Journal</h2>
         <div class="journal-content-wrapper">
             <div>
                 <p>
                     We believe journaling is paramount when striving to become a successful trader.
-                    Without keeping track of each of your trades, it will be significantly more difficult to learn from your technical and psychological mistakes.
+                    Without keeping track of each of your trades, it will be significantly more difficult to learn from your mistakes.
                     We created this tool because we saw a need within the retail trading industry for a carefully structured handwritten journal
-                    that enables traders to collect as much data about themselves and their trading strategy as possible. Through this process, traders can accelerate their learning by quickly and more efficiently identifying areas for improvement.
+                    that enables traders to collect as much data about themselves and their trading strategy as possible. Through this tool, traders can accelerate their learning by quickly and more efficiently identifying areas for improvement.
                 </p>
                 <p>
                     We believe in the power of our journal, we use it everyday, and we would like to share a <strong>free</strong> sneak peak of it with you.
@@ -106,11 +105,11 @@
 
 <!-- Email Sign-Up Form -->
 <section class="bg-light p-5">
-    <form class="email-signup">
+    <form class="email-signup" method="post" action="">
         <label for="emailInput" class="form-label">Receive your free risk management education and sample of the journal now!</label>
         <div>
-            <input type="email" class="form-control" id="emailInput" placeholder="name@example.com">
-            <button type="submit" class="btn btn-primary">Let's go</button>
+            <input type="email" class="form-control slide-in" id="emailInput" placeholder="name@example.com" name="email" required style="transform:translateX(-200%);opacity:0;">
+            <button type="submit" class="btn btn-primary styled-btn slide-in" style="transform:translateX(200%);opacity:0;">Let's go</button>
         </div>
     </form>
 </section>

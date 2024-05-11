@@ -32,10 +32,46 @@
             }
         });
     }
+    function animateFormElements() {
+        let $emailInput = $('#emailInput');
+        if (isElementInView($emailInput) && !$emailInput.hasClass('animated')) {
+            $emailInput.css({
+                opacity: 1,
+                transform: "translateX(0%)"
+            }).addClass('animated');
+        }
+
+        let $button = $('.styled-btn.slide-in');
+        if (isElementInView($button) && !$button.hasClass('animated')) {
+            $button.css({
+                opacity: 1,
+                transform: "translateX(0%)"
+            }).addClass('animated');
+        }
+    }
+
+
+    function fadeInElements() {
+        $('.fade-in').each(function (index) {
+            let $ind = $(this);
+
+            // Calculate a delay based on the element's index to stagger the animations
+            let delay = index * 100;
+
+            if (isElementInView($ind) && !$ind.hasClass('animated')) {
+                setTimeout(function () {
+                    $ind.css({
+                        opacity: '1'
+                    }).addClass('animated');
+                }, delay);
+            }
+        });
+    }
 
     function scrollLogic() {
         if (isHome) {
             animateElements();
+            animateFormElements();
 
             // Landing page parallax
             let st = $(this).scrollTop() + 1;
@@ -53,6 +89,7 @@
                 $('#navbar').removeClass('scrolled-navbar');
             }
         }
+        fadeInElements();
     }
     scrollLogic();
     $(window).scroll(function () {
